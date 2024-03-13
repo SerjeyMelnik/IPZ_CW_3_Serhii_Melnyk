@@ -1,6 +1,6 @@
 package com.example.ipz_cw_3
 
-class Item(val day: Int, val title: String = "Day $day", description: String = "This is description $day.") {
+class Item(val day: Int, val title: String = "Title $day", description: String = "This is description $day.") {
 
     val randomImageRes = listOf(
         R.drawable.image1,
