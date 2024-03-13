@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -59,16 +61,18 @@ fun MainScreen(modifier: Modifier = Modifier) {
         )
 
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
+            modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(items) {
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(color = Color.Green)
+                        .padding(8.dp),
+                    shape = RoundedCornerShape(8.dp),
                 ) {
-                    Column {
+                    Column(
+                        modifier = Modifier.padding(8.dp)
+                    ) {
                         Text(text = "Day ${it.day}")
                         Text(text = it.title, style = TextStyle(fontSize = 24.sp))
                         Image(
